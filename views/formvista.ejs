@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/stylesheets/form.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>agregar libro</title>
 </head>
 <body>
     <header>
-
+        <a href="/">
+            <h3>Inicio</h3>
+        </a>
     </header>
     <section>
         <form action="/formulario" method="post">
+            <label>Titulo</label>
+            <input type="text" name="titulo" required>
+            <label>Imagen</label>
+            <input type="text" name="imagen" required>
+            <label>Descripcion</label>
+            <input type="text" name="descripcion" required>
 
-            <input type="text" name="titulo">
-            <input type="text" name="imagen">
-            <input type="text" name="descripcion">
-
-            <input type="submit" value="Enviar datos">
+            <input type="submit" value="Enviar datos" id="enviar">
             
         </form>
     </section>

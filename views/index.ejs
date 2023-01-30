@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <header>
+      <h3>INICIO</h3>
+    </header>
+    <section>
+
+      <%=console.log(typeof(datos_parseados)) %> 
+      <%=console.log(datos_parseados[0])  %> 
+      <% for(let i = 0;i<datos_parseados.length;i++){  %>
+        <div>
+          <h1><%=datos_parseados[i].titulo %> </h1>
+          <img src="<%=datos_parseados[i].imagen%>" alt="">
+          <h6><%=datos_parseados[i].descripcion %> </h6>
+        </div>
+      <% } %>  
+
+    </section>
   </body>
 </html>

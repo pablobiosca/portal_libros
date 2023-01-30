@@ -20,33 +20,42 @@ router.post("/", (req,res,next)=>{
     
         // fs.readFile("./datos/daticos.json","utf-8")
 
-        let pasar = JSON.stringify(datos)
-        console.log("datos sttringificados",pasar)
+        // let pasar = JSON.stringify(datos)
+        // console.log("datos sttringificados",pasar)
+
+        let datos_buenos ={titulo,imagen,descripcion}
+
+        console.log(datos_buenos)
+
+        
     
         fs.readFile("./datos/daticos.json","utf-8", (err,data) => {
             if (err){console.log("error de lectura",err)}else{
                 
                 console.log("datos json : ",data)
 
+                
                 if (data != ""){
-                    
+                    data = JSON.parse(data)
+    
+                    console.log("data parseada a json :",data)
+                    data.push(datos_buenos)
+                    console.log("libro pusheado")
                 }else{
-
+                    data = []
+                    data.push(datos_buenos)
+                    console.log("archivo json vacio")
                 }
+                
+
+                fs.writeFileSync("./datos/daticos.json",JSON.stringify(data))
                 // console.log("lista normal",lista_libros)
                 // console.log("datos stringificados","["+lista_libros.toString()+"]")
             }
-            try{
-                fs.writeFile("./datos/daticos.json",data+","+pasar, (error) => {
-                    if (error){
-                        console.log("error d escritura")
-                    }
-                })
-            }catch(e){
-                console.log("algo mal en escitura",e)
-            }
         } )
     }
+
+
 
 })
 
