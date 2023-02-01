@@ -27,7 +27,7 @@ a{
   border-radius: 10px;
 }
 
-section{
+#container{
   background: cornsilk;
 
   width: 100%;
@@ -37,7 +37,7 @@ section{
   flex-wrap: wrap;
 }
 
-div{
+.hijos{
   padding: 1rem;
   margin: 1rem;
   background: #202020;

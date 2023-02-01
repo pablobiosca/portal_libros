@@ -10,16 +10,43 @@
         <h4>Agregar libro</h4>
       </a>
     </header>
-    <section>
+    <section id="container">
       
       <% for(let i = 0;i<datos_parseados.length;i++){  %>
-        <div>
+        <div class="hijos">
           <h1><%=datos_parseados[i].titulo %> </h1>
           <img src="<%=datos_parseados[i].imagen%>" alt="">
           <h6><%=datos_parseados[i].descripcion %> </h6>
+          <button onclick="borrar()">Eliminar</button>
         </div>
       <% } %>  
 
     </section>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+      let borrar = (nombre) => {
+
+        Swal.fire({
+          title: 'Are you sure?',
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire(
+              'Deleted!',
+              'Your file has been deleted.',
+              'success'
+            )
+            window.location = "/delete/"+nombre
+          }
+        })
+      }
+    </script>
   </body>
 </html>
