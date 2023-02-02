@@ -67,3 +67,16 @@ h6{
   font-size: 20px;
   padding: 2rem;
 }
+
+button{
+  font-size: 20px;
+  padding: 1rem;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  transition: .4s;
+}
+
+button:hover{
+  background: darkkhaki;
+  letter-spacing: 7px;
+}

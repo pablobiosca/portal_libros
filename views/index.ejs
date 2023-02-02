@@ -17,13 +17,13 @@
           <h1><%=datos_parseados[i].titulo %> </h1>
           <img src="<%=datos_parseados[i].imagen%>" alt="">
           <h6><%=datos_parseados[i].descripcion %> </h6>
-          <button onclick="borrar()">Eliminar</button>
+          <button onclick="borrar('<%=datos_parseados[i].titulo%>')">Eliminar</button>
         </div>
       <% } %>  
 
     </section>
 
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.all.min.js"></script>
 
     <script>
       let borrar = (nombre) => {
