@@ -5,6 +5,8 @@ const fs = require("fs")
 /* GET home page. */
 router.get('/', function(req, res, next) {
   
+  // res.cookie("theme","light",{maxAge:1000*60*60})
+
   try{
     let datos = fs.readFileSync("./datos/daticos.json")
     if (datos!=""){
@@ -56,6 +58,17 @@ router.get( "/delete/:id" , (req,res) =>{
         // console.log("datos stringificados","["+lista_libros.toString()+"]")
     }
 } )
+})
+
+router.get("/set_dark", (req,res)=>{
+
+  if (req.cookies.theme == "dark"){
+    res.cookie("theme","light",{maxAge:1000*60*60})
+    res.redirect("/")
+  }else{
+    res.cookie("theme","dark",{maxAge:1000*60*60})
+    res.redirect("/")
+  }
 
 })
 
