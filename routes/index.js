@@ -7,6 +7,9 @@ router.get('/', function(req, res, next) {
   
   // res.cookie("theme","light",{maxAge:1000*60*60})
 
+  console.log(req.cookies.theme)
+  let theme=req.cookies.theme
+
   try{
     let datos = fs.readFileSync("./datos/daticos.json")
     if (datos!=""){
@@ -18,9 +21,9 @@ router.get('/', function(req, res, next) {
 
       let datos_parseados = JSON.parse(datos)
 
-      console.log(datos_parseados)
+      // console.log(datos_parseados)
 
-      res.render("index",{datos_parseados})
+      res.render("index",{datos_parseados,theme})
 
     }else{
       console.log("no hay datos")

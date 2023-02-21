@@ -5,15 +5,26 @@
   </head>
   <body>
 
+    <% if (theme=="light") {%>
+      <header style="background: white;">
+        <a href="/set_dark">DARK</a>
+        <h5>INICIO</h5>
+        <a href="/formulario">
+          <h4>Agregar libro</h4>
+        </a>
+      </header>
+    <% } %>
 
-  
-    <header>
-      <a href="/set_dark">DARK</a>
-      <h5>INICIO</h5>
-      <a href="/formulario">
-        <h4>Agregar libro</h4>
-      </a>
-    </header>
+    <% if (theme=="dark") {%>
+      <header style="background: black;">
+        <a href="/set_dark">DARK</a>
+        <h5>INICIO</h5>
+        <a href="/formulario">
+          <h4>Agregar libro</h4>
+        </a>
+      </header>
+    <% } %>
+
     <section id="container">
       
       <% for(let i = 0;i<datos_parseados.length;i++){  %>

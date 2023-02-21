@@ -13,6 +13,6 @@ let x= [
 console.log(x.map(x => x.nombre))
 console.log(x.map(x => x.nombre).indexOf("zapatilla"))
 
-x.splice(x.map(x => x.nombre).indexOf("zapatilla"),1)
+x.splice(x.map(x => x.nombre).indexOf("cerdo"),1)
 
 console.log(x)
